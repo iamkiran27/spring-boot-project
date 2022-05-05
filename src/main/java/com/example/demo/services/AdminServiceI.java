@@ -10,7 +10,7 @@ public interface AdminServiceI {
 
     //save
 
-    public void saveProduct(ProductEntity productEntity);
+    public short saveProduct(ProductEntity productEntity);
 
     //get
 

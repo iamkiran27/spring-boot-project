@@ -20,12 +20,12 @@ public class AdminServiceImp implements AdminServiceI {
 
     @Override
     @Transactional
-    public void saveProduct(ProductEntity productEntity) {
+    public short saveProduct(ProductEntity productEntity) {
 
         adminDaoI.saveProduct(productEntity);
 
 
-
+        return 0;
     }
 
     @Override
