@@ -23,3 +23,5 @@ public interface CartRepo extends JpaRepository<CartEntity, Integer> {
     List<CartEntity> findByUsername(UserEntity userEntity);
 
 }
+
+
