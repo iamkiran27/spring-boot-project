@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class MainTest {
 
     @Test
-    static void main() {
+    public void main() {
         String[] args = new String[0];
         AppApplication.main(args);
         assertEquals(args, AppApplication.args2);
