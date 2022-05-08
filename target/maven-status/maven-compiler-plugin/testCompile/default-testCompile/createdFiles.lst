@@ -1,0 +1,7 @@
+com/example/demo/services/TestProductServices.class
+com/example/demo/dao/TestCartDao.class
+com/example/demo/services/TestAdminServices.class
+com/example/demo/dao/TestProductDao.class
+com/example/demo/services/TestCartServices.class
+com/example/demo/dao/TestAdminDao.class
+com/example/demo/AppApplicationTests.class
