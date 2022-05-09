@@ -30,7 +30,7 @@ public class SignUpController {
 
 
     @PostMapping("/signup")
-    public  String post(@Valid  @ModelAttribute("user") UserEntity user, Errors errors, Model model)
+    public  String post(@Valid  @ModelAttribute("user") UserEntity user, Errors errors, Model model) throws  NullPointerException
 
     {
         if (null != errors && errors.getErrorCount() > 0) {

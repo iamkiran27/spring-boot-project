@@ -1,18 +1,20 @@
 package com.example.demo;
 
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 @SpringBootTest
-public class MainTest {
+class SpringBootWebAppApplicationTests {
+
 
     @Test
-    public void main() {
+    void main() {
         String[] args = new String[0];
         AppApplication.main(args);
         assertEquals(args, AppApplication.args2);
     }
+
 }
