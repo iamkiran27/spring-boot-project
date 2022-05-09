@@ -19,7 +19,7 @@ public class CartEntityTests {
     private CartEntity cartEntity;
     @Before
    public void before(){
-        cartEntity = new CartEntity();
+         cartEntity = new CartEntity();
         cartEntity.setId(1);
         cartEntity.setQuantity(1);
         cartEntity.setTitle("Book");
