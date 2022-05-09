@@ -17,9 +17,14 @@
 		<java.version>11</java.version>
 
 
-			<sonar.organization>blinklist-app</sonar.organization>
+		<sonar.organization>blinklist-app</sonar.organization>
 			<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-
+<sonar.projectKey>
+	iamkiran27_spring-boot-project
+</sonar.projectKey>
+		<sonar.login>
+			78dbf2febd654b79048c4b59f240ec39f53e7e7e
+		</sonar.login>
 
 
 	</properties>
