@@ -14,7 +14,7 @@ import java.util.List;
 public class CartServiceImp implements  CartServiceI{
 
     @Autowired
-    private CartDaoI cartDaoI;
+     CartDaoI cartDaoI;
 
     @Override
     @Transactional

@@ -5,12 +5,20 @@ import com.example.demo.entities.ProductEntity;
 
 import com.example.demo.services.AdminServiceI;
 import com.example.demo.services.ProductServiceI;
+
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,8 +44,24 @@ public class AdminController {
 
 
     @PostMapping("/admin/add-product")
-    public String post(@ModelAttribute("product") ProductEntity productEntity, Model model)
-    {
+    public String post(@Valid @ModelAttribute("product") ProductEntity productEntity, @RequestParam("file") MultipartFile file ,Errors errors, Model model) throws IOException {
+
+if(errors.hasFieldErrors() )
+{
+    return  "addproduct";
+}
+
+        if(file.isEmpty())
+        {
+
+            errors.rejectValue("imageUrl","error","Upload an image.");
+            return  "addproduct";
+        }
+
+        byte[] image = Base64.encodeBase64(file.getBytes());
+        String result = new String(image);
+String res = "data:image/png;base64," + result;
+        productEntity.setImageUrl(res);
 
         adminServiceI.saveProduct(productEntity);
 return  "redirect:/admin";

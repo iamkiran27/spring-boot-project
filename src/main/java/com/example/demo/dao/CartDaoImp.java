@@ -13,7 +13,7 @@ import java.util.List;
 public class CartDaoImp implements CartDaoI{
 
     @Autowired
-    private CartRepo cartRepo;
+     CartRepo cartRepo;
     @Override
     public List<CartEntity> getCartItems(UserEntity userEntity) {
         return cartRepo.findByUsername(userEntity);

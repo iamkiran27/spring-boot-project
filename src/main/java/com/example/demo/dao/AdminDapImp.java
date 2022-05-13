@@ -13,7 +13,7 @@ import java.util.Optional;
 public class AdminDapImp implements  AdminDaoI{
 
     @Autowired
-    private ProductRepo productRepo;
+     ProductRepo productRepo;
     @Override
     public void saveProduct(ProductEntity productEntity) {
 

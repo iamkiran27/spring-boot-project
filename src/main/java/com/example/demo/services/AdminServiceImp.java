@@ -15,7 +15,7 @@ public class AdminServiceImp implements AdminServiceI {
 
 
     @Autowired
-    private AdminDaoI adminDaoI;
+     AdminDaoI adminDaoI;
 
 
     @Override

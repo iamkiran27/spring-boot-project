@@ -30,7 +30,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        String role = "ADMIN";
+
 http.authorizeRequests()
         .antMatchers("/signup").permitAll()
         .antMatchers("/admin/**").hasRole("admin")
@@ -42,6 +42,8 @@ http.authorizeRequests()
         .defaultSuccessUrl("/",true)
         .loginProcessingUrl("/processLogin")
         .permitAll()
-        .and().logout().permitAll();
+        .and().logout().permitAll()
+        .and()
+                .exceptionHandling().accessDeniedPage("/access-denied");
     }
 }

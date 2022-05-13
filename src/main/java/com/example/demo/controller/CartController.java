@@ -40,6 +40,7 @@ public class CartController {
     {
 
 double total  = 0;
+int items= 0;
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         UserEntity userEntity2 = userRepo.findByUsername(username);
@@ -49,7 +50,9 @@ double total  = 0;
         for(CartEntity cartEntity : cartEntityList)
         {
             total += cartEntity.getQuantity() * cartEntity.getPrice();
+            items += cartEntity.getQuantity();
         }
+        model.addAttribute("items",items );
 model.addAttribute("products", cartEntityList);
         model.addAttribute("total", total);
         return  "cart";
@@ -88,7 +91,7 @@ model.addAttribute("products", cartEntityList);
 
 
 
-        return "redirect:/cart";
+        return "redirect:/";
     }
 
 

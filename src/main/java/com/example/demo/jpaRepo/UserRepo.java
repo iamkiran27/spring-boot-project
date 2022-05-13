@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 
-@Repository
+
 public interface UserRepo extends JpaRepository<UserEntity, String> {
 
     @Query("select u from UserEntity u where u.username = ?1")

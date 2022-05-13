@@ -71,9 +71,10 @@
       </center>
       <div class="main">
         <form
-          th:method="post"
+          method="post"
           th:action="@{/admin/add-product}"
           th:object="${product}"
+          enctype="multipart/form-data"
         >
           <input type="hidden" th:field="*{id}" />
           <div class="form-outline mb-4">
@@ -85,17 +86,29 @@
               class="form-control"
             />
             <label class="form-label" for="form1Example1">Title</label>
+            <p
+              class="alert alert-danger"
+              th:if="${#fields.hasErrors('title')}"
+              th:errors="*{title}"
+            ></p>
           </div>
-          <div class="form-outline mb-4">
-            <input
-              type="text"
-              id="form1Example2"
-              name="imageUrl"
-              th:field="*{imageUrl}"
-              class="form-control"
-            />
-            <label class="form-label" for="form1Example2">Image Url</label>
-          </div>
+
+          <label class="form-label" for="customFile">Upload Image</label>
+          <input
+            type="file"
+            name="file"
+            class="form-control"
+            id="customFile"
+            
+
+          />
+          <p
+            class="alert alert-danger"
+            th:if="${#fields.hasErrors('imageUrl')}"
+            th:errors="*{imageUrl}"
+          >
+
+          </p>
 
           <div class="form-outline mb-4">
             <input
@@ -107,6 +120,11 @@
               class="form-control"
             />
             <label class="form-label" for="price">Price</label>
+           <p
+              class="alert alert-danger"
+              th:if="${#fields.hasErrors('price')}"
+              th:errors="*{price}"
+            ></p>
           </div>
 
           <button type="submit" class="btn btn-primary btn-block">

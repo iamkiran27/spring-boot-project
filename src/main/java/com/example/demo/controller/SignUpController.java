@@ -18,6 +18,8 @@ import javax.validation.Valid;
 @Controller
 public class SignUpController {
 
+    private static final String page = "signup";
+
     @Autowired
     private UserRepo userRepo;
 
@@ -25,7 +27,7 @@ public class SignUpController {
     public  String get(UserEntity user, Model model){
 
         model.addAttribute("user", new UserEntity());
-        return "signup";
+        return page;
     }
 
 
@@ -33,8 +35,9 @@ public class SignUpController {
     public  String post(@Valid  @ModelAttribute("user") UserEntity user, Errors errors, Model model) throws  NullPointerException
 
     {
-        if (null != errors && errors.getErrorCount() > 0) {
-            return "signup";
+
+        if (errors.getErrorCount() > 0) {
+            return page;
         } else {
             UserEntity account = userRepo.findByUsername(user.getUsername());
 
@@ -50,7 +53,7 @@ public class SignUpController {
             else {
 
                 errors.rejectValue("username","error","An account with this username already exists.");
-                return  "signup";
+                return  page;
             }
 
 

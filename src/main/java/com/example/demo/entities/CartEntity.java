@@ -2,9 +2,9 @@ package com.example.demo.entities;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 import javax.persistence.*;
 
@@ -27,6 +27,8 @@ public class CartEntity {
 
     @Column(name = "quantity")
     private int quantity;
+
+
 
     @Column(name = "prod_id")
     private int prodId;

@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public class ProductDaoImp implements ProductDaoI{
     @Autowired
-    private ProductRepo productRepo;
+     ProductRepo productRepo;
     @Override
     public List<ProductEntity> getProducts() {
         return productRepo.findAll();
